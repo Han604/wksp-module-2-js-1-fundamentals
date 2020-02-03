@@ -61,11 +61,26 @@ Turn the following sentences into valid JavaScript `if` statements. _Use console
 // 1. If it rains, I stay home.
 let currentWeather = 'rainy';
 
+if(currentWeather === 'rainy') {
+    console.log("Stay at home");
+}
+
 // 2. If I am hungry, I eat.
 let hunger = true;
 
+if(hunger === true) {
+    console.log("Eat, fool")
+}
+
+
 // 3. If it's 10pm, I go to bed. If not, I write code.
 let currentHour = 22;
+
+if(currentHour === 22) {
+    console.log("Sleep, fool");
+} else {
+    console.log("Code, fool");
+}
 
 ```
 
@@ -99,6 +114,7 @@ console.log(2);
 
 This is where loops come in!
 
+
 ---
 
 ### `while` Loops
@@ -126,6 +142,13 @@ Let's write a function that outputs 2^10 (two to the power of ten).
 ```js
 // Example
 
+let x = 1;
+let i = 1;
+while (i < 11) {
+    x = x * 2
+    i ++;
+}
+console.log(x)
 
 ```
 
@@ -181,6 +204,9 @@ Write a program that output all of the numbers from 0 to 25
 ```js
 // code here
 
+for  (number = 0; number < 26; number = number + 1) {
+    console.log(number)
+}
 ```
 
 ---
@@ -191,6 +217,11 @@ Write a program that output all of ODD the numbers from 0 to 25
 
 ```js
 // code here
+for (number = 0; number <26; number = number + 1) {
+    if (number % 2 === 1) {
+        console.log(number);
+    }
+}
 
 ```
 
@@ -203,6 +234,13 @@ Write a program that output all of the numbers from 0 to 25, but replaces all mu
 ```js
 // code here
 
+for (let number = 0; number < 26; number = number + 1) {
+    if (number % 5 === 0 && number !== 0) {
+        console.log("Five Alive");
+    }else {
+        console.log(number);
+    }
+}
 ```
 
 ---
