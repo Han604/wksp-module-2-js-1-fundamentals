@@ -13,6 +13,12 @@ There are 6 basic types in JavaScript.
 
 ```js
 // Examples
+"bacon"
+true
+null
+2323
+[1, 2, 3, 4,]
+{name: 'fred', age: 23}
 
 ```
 
@@ -137,7 +143,7 @@ Booleans can be combined to produce new boolean values.
 | Operator | Description | Example |
 |---|---|---|
 | && | AND | _true && true_ |
-| &#124;&#124; | OR | _true &#124;&#124; false_ |
+| || | OR | _true || false_ |
 | ! | NOT | _!false_ |
 
 All of the examples in the table above evaluate to `true`.
@@ -159,14 +165,14 @@ Of course comparison operators and logical operators are usually combined in an 
 ```js
 // Look at these expressions below and determine whether they evaluate to true or false
 
-1. true || false
-2. false && false
-3. 1 < 2 && 2 > 1
-4. 31 < 13 || 1 < 2 && 3 > 1
-5. 400 <= 400 && 399 < 400 && (30 > 31 || 400 > 31)
-6. true && false && false || false && true
-7. true && false || true || false
-8. true && false && false || false && true ? true && false && false || false && true : 1 < 2 && 2 > 1
+1. true || false true
+2. false && false false
+3. 1 < 2 && 2 > 1 true
+4. 31 < 13 || 1 < 2 && 3 > 1 true
+5. 400 <= 400 && 399 < 400 && (30 > 31 || 400 > 31) true
+6. true && false && false || false && true false
+7. true && false || true || false true
+8. true && false && false || false && true ? true && false && false || false && true : 1 < 2 && 2 > 1 true
 ```
 
 ---
@@ -222,7 +228,9 @@ For more details, you can check out this [Sitepoint page](https://www.sitepoint.
 - Arrays are sequences of anything. Strings, numbers, booleans, arrays, other things we haven't learned about yet.
 - You can declare an array by using [ ] square brackets.
 - We separate the elements of an array with a comma.
-- Arrays are mutable.
+- Arrays are mutable. (we can change it)
+
+has an inherent order to it
 
 ```js
 ['bacon', undefined, 900, true]
@@ -293,9 +301,9 @@ Given this data structure:
 let data = [0, [], [], [1,2,3, [4]]]
 ```
 
-1. How would you access the value `0`?
-2. How would you access the value `3`?
-3. How would you access the value `4`?
+1. How would you access the value `0`? 0
+2. How would you access the value `3`? [3][2]
+3. How would you access the value `4`? [3][3][0]
 
 ---
 
@@ -360,7 +368,9 @@ Values in objects can be accessed with
 ```js
 // Example
 let person = {name: 'Bob', age: 23};
+person.name // Bob
 const otherPerson = {name: 'Joe', age: 31, height: '170cm'};
+otherPerson['name'] // 'Joe'
 
 ```
 
@@ -374,9 +384,9 @@ let person = {name: 'Bob', age: 23};
 let name = 'John';
 
 // What is the value of the following expressions?
-1. person.name
-2. person['name']
-3. person[name]
+1. person.name //bob
+2. person['name'] //'Bob'
+3. person[name] //undefined
 
 ```
 
@@ -391,9 +401,9 @@ let person = {name: 'bob', age: 23};
 let key = 'name';
 
 // What is the value of the following expressions:
-1. person.key
-2. person['key']
-3. person[key]
+1. person.key //undefined
+2. person['key'] //undefined
+3. person[key] //bob
 
 ```
 

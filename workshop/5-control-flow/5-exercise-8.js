@@ -13,3 +13,10 @@
 // #####
 // ######
 // #######
+
+let hash = "";
+
+for(num = 1; num <= 7; num ++){
+    hash = hash + "#";
+    console.log(hash);
+}
